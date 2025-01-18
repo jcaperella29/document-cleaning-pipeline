@@ -1,64 +1,41 @@
-Document Cleaning Pipeline
-A machine-learning-powered pipeline for cleaning scanned documents. This project leverages a pre-trained Denoising Convolutional Neural Network (DnCNN) combined with rule-based post-processing techniques to remove noise, enhance text clarity, and produce clean, professional-looking documents. The pipeline also supports exporting cleaned images as PDFs.
+# Document Cleaning Pipeline 🧹📝
 
-Features
-Denoising with CNN:
-Uses a pre-trained DnCNN model to remove background noise and artifacts.
-Adaptive Thresholding:
-Binarizes the image for uniform background and sharper text.
-Morphological Operations:
-Removes small artifacts and smoothens the text for enhanced readability.
-PDF Conversion:
-Exports the cleaned document as a high-quality PDF.
-Requirements
-To run the project, install the following dependencies:
+This repository contains a Python-based pipeline for cleaning scanned document images. The pipeline leverages a **DnCNN-based convolutional neural network** for denoising, coupled with adaptive thresholding and post-processing, to generate clean, readable outputs that are ideal for both **human readability** and **text mining**.
 
-Copy
-Edit
-pip install torch torchvision opencv-python numpy pillow
-Usage
-Clone the repository:
+---
 
-bash
-Copy
-Edit
+## **Features** ✨
+
+- **Denoising with DnCNN**:
+  Uses a pre-trained DnCNN (Deep Convolutional Neural Network) to remove noise while preserving important text details.
+  
+- **Adaptive Thresholding**:
+  Sharpens text, enhances contrast, and creates uniform backgrounds for better readability and machine processing.
+
+- **PDF Conversion**:
+  Converts cleaned images into grayscale, high-resolution PDFs for archival and text mining.
+
+- **Batch Processing**:
+  Processes all images in a folder and generates cleaned images and PDFs in bulk.
+
+---
+
+## **Example Output**
+
+### **Input (Noisy Image)**
+![Noisy Input](example_images/noisy.png)
+
+### **Output (Cleaned Image)**
+![Cleaned Output](example_images/cleaned.png)
+
+### **Output (Thresholded Binary)**
+![Thresholded Output](example_images/thresholded.png)
+
+---
+
+## **Installation** 🛠️
+
+### 1. **Clone the Repository**
+```bash
 git clone https://github.com/jcaperella29/document-cleaning-pipeline.git
 cd document-cleaning-pipeline
-Run the pipeline:
-
-Copy
-Edit
-python document_cleaning_pipeline.py
-Outputs:
-
-Cleaned Image: Saved as final_document.png.
-PDF File: Saved as final_document.pdf.
-Directory Structure
-bash
-Copy
-Edit
-document-cleaning-pipeline/
-├── document_cleaning_pipeline.py  # Main script
-├── models/
-│   └── DnCNN_sigma25/
-│       └── model.pth  # Pre-trained weights
-├── data/
-│   └── val/
-│       └── noisy_0.png  # Example noisy image
-├── README.md  # Project documentation
-Example
-Input (Noisy Document):
-An example noisy document containing smudges and artifacts.
-
-Output (Cleaned Document):
-The cleaned version with enhanced text clarity and uniform background.
-
-Next Steps
-Add batch processing to clean multiple documents at once.
-Implement multi-page PDF generation from multiple cleaned images.
-Build a simple GUI for easier usage.
-Contributing
-Contributions are welcome! Feel free to fork this repository and submit a pull request with your improvements.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
