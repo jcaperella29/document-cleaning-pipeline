@@ -1,5 +1,5 @@
 Document Cleaning Pipeline
-A machine-learning-powered pipeline for cleaning scanned documents. This project leverages a pre-trained Denoising Convolutional Neural Network (DnCNN) combined with rule-based post-processing techniques to remove noise, enhance text clarity, and produce clean, professional-looking documents.
+A machine-learning-powered pipeline for cleaning scanned documents. This project leverages a pre-trained Denoising Convolutional Neural Network (DnCNN) combined with rule-based post-processing techniques to remove noise, enhance text clarity, and produce clean, professional-looking documents. The pipeline also supports exporting cleaned images as PDFs.
 
 Features
 Denoising with CNN:
@@ -8,31 +8,31 @@ Adaptive Thresholding:
 Binarizes the image for uniform background and sharper text.
 Morphological Operations:
 Removes small artifacts and smoothens the text for enhanced readability.
-Customizable Pipeline:
-Easily adjustable to include additional processing steps (e.g., segmentation, batch processing).
+PDF Conversion:
+Exports the cleaned document as a high-quality PDF.
 Requirements
 To run the project, install the following dependencies:
 
-bash
 Copy
 Edit
-pip install torch torchvision opencv-python numpy
+pip install torch torchvision opencv-python numpy pillow
 Usage
 Clone the repository:
 
 bash
 Copy
 Edit
-git clone https://github.com/<your-username>/document-cleaning-pipeline.git
+git clone https://github.com/jcaperella29/document-cleaning-pipeline.git
 cd document-cleaning-pipeline
 Run the pipeline:
 
-bash
 Copy
 Edit
 python document_cleaning_pipeline.py
-The cleaned document will be saved as final_document.png.
+Outputs:
 
+Cleaned Image: Saved as final_document.png.
+PDF File: Saved as final_document.pdf.
 Directory Structure
 bash
 Copy
@@ -45,19 +45,20 @@ document-cleaning-pipeline/
 ├── data/
 │   └── val/
 │       └── noisy_0.png  # Example noisy image
-└── README.md  # Project documentation
+├── README.md  # Project documentation
 Example
 Input (Noisy Document):
+An example noisy document containing smudges and artifacts.
 
 Output (Cleaned Document):
+The cleaned version with enhanced text clarity and uniform background.
 
 Next Steps
 Add batch processing to clean multiple documents at once.
-Implement PDF generation from cleaned images.
-Fine-tune the DnCNN model on your specific dataset for better results.
+Implement multi-page PDF generation from multiple cleaned images.
+Build a simple GUI for easier usage.
 Contributing
 Contributions are welcome! Feel free to fork this repository and submit a pull request with your improvements.
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
