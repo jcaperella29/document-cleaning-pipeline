@@ -1,3 +1,5 @@
+##This repository is no longer maintained. Please see the new and improved version here.https://github.com/jcaperella29/Document_cleaning_CLI
+
 # Document Cleaning Pipeline 🧹📝
 
 This repository contains a Python-based pipeline for cleaning scanned document images. The pipeline leverages a **DnCNN-based convolutional neural network** for denoising, coupled with adaptive thresholding and post-processing, to generate clean, readable outputs that are ideal for both **human readability** and **text mining**.
